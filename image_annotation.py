@@ -14,14 +14,19 @@ import numpy as np
 src_feature_path = "E:\image_matting\origin"
 src_target_path = "E:\image_matting\cutout"
 
-for img_name in os.listdir(src_feature_path):
+img_list = os.listdir(src_feature_path)
+size = len(img_list)
+
+for i, img_name in enumerate(img_list):
     img_path = src_feature_path + '/' + img_name
     matted_img_path = src_target_path + '/' + img_name.split('.')[0] + '.png'
-
+    window_name = img_name + ' (' + str(i + 1) + ' / ' + str(size) + ')'
+    
     # Display original and matted images
-    cv2.namedWindow(img_name)
-    cv2.moveWindow(img_name, 800, 600)
-    cv2.imshow(img_name,
+    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+    cv2.moveWindow(window_name, 800, 600)
+    cv2.resizeWindow(window_name, 1580, 1320)
+    cv2.imshow(window_name,
                np.concatenate((cv2.imread(img_path),
                                cv2.imread(matted_img_path)),
                                axis = 1)

@@ -11,8 +11,8 @@ import shutil
 import os
 import numpy as np
 
-src_feature_path = "E:\image_matting\origin"
-src_target_path = "E:\image_matting\cutout"
+src_feature_path = "PATH/TO/THE/SOURCE"
+src_target_path = "PATH/TO/THE/TARGET"
 
 img_list = os.listdir(src_feature_path)
 size = len(img_list)
@@ -35,8 +35,8 @@ for i, img_name in enumerate(img_list):
     k = chr(cv2.waitKey(0))
 
     if k == "p":
-        dst_feature_path = r"E:\image_matting_dataset\portrait\feature"
-        dst_target_path = r"E:\image_matting_dataset\portrait\target"
+        dst_feature_path = r"PATH/TO\portrait\feature"
+        dst_target_path = r"PATH/TO\portrait\target"
         shutil.move(img_path, 
                     dst_feature_path + '/' + img_name)
         shutil.move(matted_img_path, 
@@ -44,8 +44,8 @@ for i, img_name in enumerate(img_list):
         cv2.destroyAllWindows()
     
     elif k == "s":
-        dst_feature_path = r"E:\image_matting_dataset\commodity\feature"
-        dst_target_path = r"E:\image_matting_dataset\commodity\target"
+        dst_feature_path = r"PATH/TO\commodity\feature"
+        dst_target_path = r"PATH/TO\commodity\target"
         shutil.move(img_path, 
                     dst_feature_path + '/' + img_name)
         shutil.move(matted_img_path, 
@@ -53,8 +53,8 @@ for i, img_name in enumerate(img_list):
         cv2.destroyAllWindows()
     
     elif k == "c":
-        dst_feature_path = r"E:\image_matting_dataset\cartoon\feature"
-        dst_target_path = r"E:\image_matting_dataset\cartoon\target"
+        dst_feature_path = r"PATH/TO\cartoon\feature"
+        dst_target_path = r"PATH/TO\cartoon\target"
         shutil.move(img_path, 
                     dst_feature_path + '/' + img_name)
         shutil.move(matted_img_path, 
@@ -62,8 +62,8 @@ for i, img_name in enumerate(img_list):
         cv2.destroyAllWindows()
     
     elif k == "a":
-        dst_feature_path = r"E:\image_matting_dataset\animal\feature"
-        dst_target_path = r"E:\image_matting_dataset\animal\target"
+        dst_feature_path = r"PATH/TO\animal\feature"
+        dst_target_path = r"PATH/TO\animal\target"
         shutil.move(img_path, 
                     dst_feature_path + '/' + img_name)
         shutil.move(matted_img_path, 

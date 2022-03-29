@@ -1,5 +1,5 @@
 """
-Extracting alpha matte from the matted image in .png format
+Extracting alpha mask from the matted image in .png format
 """
 
 from tqdm import tqdm
